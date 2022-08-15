@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>User Profil</h1>
+        {% for msg in app.session.flashBag.get('warning') %}
+            <div class="alert alert-warning">
+                {{ msg }}
+            </div>
+        {% endfor %}
+
+        {% for character in userCharacters %}
+        <div class="character_card">
+            <h3>{{ character.name }}</h3>
+            <h4>{{ character.level }}</h4>
+        </div>
+        {% endfor %}
+    
+    <a href="/profil/character/add"><button>Add a character</button></a>
+
+</div>
+{% endblock %}

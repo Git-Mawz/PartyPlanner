@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}PartyPlanner - Party Creation{% endblock %}
+
+{% block body %}
+    <h1>Party Creation</h1>
+
+    {{ form_start(partyForm) }}
+        {{ form_row(partyForm.name, {
+            name: 'Party Name'
+        }) }}
+        
+        {{ form_row(partyForm.happenAt, {
+            label: 'Time'
+        }) }} <p>Server Time (UTC)</p>
+    
+
+        {{ form_row(partyForm.leader, {
+            label : 'Leader'
+        }) }}
+
+
+        <button type="submit" class="btn">Create the party</button>
+    {{ form_end(partyForm) }}
+
+
+{% endblock %}

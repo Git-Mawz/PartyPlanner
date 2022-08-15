@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil - Add a character{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Add a character</h1>
+
+        {{ form_start(characterForm) }}
+        {{ form_row(characterForm.name, {
+            name: 'Character Name'
+        }) }}
+        
+        {{ form_row(characterForm.level, {
+            label: 'Level'
+        }) }}
+    
+
+        {{ form_row(characterForm.jobs, {
+            label : 'Classes'
+        }) }}
+
+        {{ form_row(characterForm.game, {
+            label : 'Game'
+        }) }}
+
+
+        <button type="submit" class="btn">Add this character</button>
+    {{ form_end(characterForm) }}
+
+
+
+
+</div>
+{% endblock %}
