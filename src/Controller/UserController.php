@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
     #[Route('/profil', name: 'user_profil')]
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(): Response
     {
         $userCharacters = $this->getUser()->getCharacters();
 
